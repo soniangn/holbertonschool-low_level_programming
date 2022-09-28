@@ -1,5 +1,7 @@
 #include <stdio.h>
-/* prints string */
+/**
+ *  prints string 
+ */
 int main(void)
 {
 	    /* string initialisation */

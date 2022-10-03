@@ -11,9 +11,15 @@ int main(void)
 	char k;
 	for (i = 0; i <= 10; i++)
 	{
+		putchar(i);
 		for (j = 0; j <= 10; j++)
+		{
+			putchar(j);
+		}
 			for (k = 'a'; k <= 'f'; k++)
+			{
 				putchar(i, j, k);
+			}
 	}
 	putchar('\n');
 	return (0);

@@ -18,6 +18,6 @@ int _islower(int c)
 		else
 		{
 			letter = 0;
-		return(letter);
 	}
+	return letter;
 }

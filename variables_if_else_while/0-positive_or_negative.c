@@ -1,8 +1,9 @@
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 /**
  * main - entry point
- * Description: indicates if the random number is positive or negative
+ * Description: prints a random number and indicates if the random number is positive or negative
  * Return: results in 0
  */
 

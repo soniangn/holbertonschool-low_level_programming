@@ -14,6 +14,7 @@ int main(void)
 	for (c = 'f'; c != 'q'; c++)
 	{
 		putchar(c);
+	}
 	putchar('\n');
 	return (0);
 }

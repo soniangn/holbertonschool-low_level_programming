@@ -10,7 +10,7 @@ int main(void)
 
 	for (i = 0; i <= 9; i++)
 	{
-		putchar ((i % 10) + '0');
+		putchar (n);
 		if (i < 9)
 		{
 			putchar(',');
@@ -19,4 +19,4 @@ int main(void)
 	}
 	putchar ('\n');
 	return (0);
-}
+}i

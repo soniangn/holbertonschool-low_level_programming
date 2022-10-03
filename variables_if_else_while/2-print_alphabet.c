@@ -3,11 +3,15 @@
 /**
  * main - entry point
  * Description: prints the alphabet in lowercase
+ * Return: alphabet
  */
-int main(void) {
+int main(void)
+{
 	char c;
-	while (c != 0) {
+	while (c != 0)
+	{
 		printf("%d\n", c);
-		c = c+1;
+		c++;
 	}
+	return (0);
 }

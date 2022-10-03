@@ -7,10 +7,11 @@
 int main(void)
 {
 	char c = 'a';
-	do {
+	for (c = 'a'; c != 'e' || c != 'q'; c++)
+	{
 		putchar(c);
 		c++;
-	} while (c != 'e' || c != 'q');
+	}
 	putchar('\n');
 	return (0);
 }

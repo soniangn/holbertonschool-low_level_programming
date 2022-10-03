@@ -10,7 +10,7 @@ int main(void)
 	char c;
 	while (c != 0)
 	{
-		printf("%d\n", c);
+		putchar("%d\n", c);
 		c++;
 	}
 	return (0);

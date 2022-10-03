@@ -12,11 +12,11 @@ int _islower(int c)
 	{
 		if (i == c)
 		{
-			return (1);
+			letter = 1;
 		}
 		else
 		{
-			return (0);
+			letter = 0;
+		return(letter);
 	}
-		return (0);
 }

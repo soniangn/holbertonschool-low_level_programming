@@ -7,10 +7,9 @@
 int main(void)
 {
 	char c = 'a';
-	while (c != 'q' && c != 'e')
+	for (c='a'; (c != 'q' && c != 'e'); c++)
 	{
 		putchar(c);
-		c++;
 	}
 	putchar('\n');
 	return (0);

@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <main.h>
 /**
  * main - entry point
  * Description: prints _putchar
  * Return: 0
  */
-int main(void)
+
 {
 	putchar('_');
 	putchar('p');

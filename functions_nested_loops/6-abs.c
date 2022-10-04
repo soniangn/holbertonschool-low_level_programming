@@ -4,7 +4,7 @@
  * Description: computes the absolute of an integer
  * Return: 0
  */
-int _abs(int)
+int _abs(int i)
 {
 	int i;
 
@@ -12,4 +12,5 @@ int _abs(int)
 		_putchar(i);
 	if (i < 0)
 		_putchar(i * -1);
+	return (0);
 }

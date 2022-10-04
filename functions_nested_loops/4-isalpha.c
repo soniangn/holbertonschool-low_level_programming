@@ -2,7 +2,7 @@
 /**
  * _isalpha - entry point
  * Description: checks for alphabetic character
- * parameter c: character to check
+ * @c: character to check
  * Return: 0
  */
 int _isalpha(int c)

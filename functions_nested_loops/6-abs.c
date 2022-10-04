@@ -11,5 +11,5 @@ int _abs(int)
 	if (i > 0)
 		_putchar(i);
 	if (i < 0)
-		_putchar('-i');
+		_putchar(i * -1);
 }

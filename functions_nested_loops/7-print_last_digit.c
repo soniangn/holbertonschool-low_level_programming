@@ -8,6 +8,6 @@ int print_last_digit(int i)
 {
 
 	while (i <= 0 || i >= 0)
-		return (i / 100);
+		return (i % 10);
 	return (0);
 }

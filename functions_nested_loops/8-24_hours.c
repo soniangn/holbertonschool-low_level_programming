@@ -1,15 +1,17 @@
 #include "main.h"
 /**
- * print_last_digit - entry point
- * Description: computes the absolute of an integer
- * Return: the last digit of the number i
+ * jack_bauer - entry point
+ * Description: prints every minute of Jack Bauer starting from 00:00 to 23:59
+ * Return: the time
  */
 void jack_bauer(void)
 {
-	int i = '00:00';
-	int j = '23:59';
+	int hours;
+	int minutes;
 
-	while (i < j)
-		_putchar(i);
-		i++;
+	for (hours = 00; hours <= 23; hours++)
+		for (minutes = 00; hours <= 59; minutes++)
+			_putchar(hours);
+			_putchar(':');
+			_putchar(minutes);
 }

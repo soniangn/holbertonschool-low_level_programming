@@ -1,14 +1,14 @@
 #include "main.h"
 /**
- * @abs - entry point
+ * _abs - entry point
  * Description: computes the absolute of an integer
+ * @i: integer
  * Return: 0
  */
 int _abs(int i)
 {
 	if (i > 0)
-		_putchar(i);
+		return (i);
 	else
-		_putchar(-1 * i);
-	return (0);
+		return (-i);
 }

@@ -25,5 +25,4 @@ void print_fizz(int i)
 			printf("%d ", i);
 		}
 	}
-
 }

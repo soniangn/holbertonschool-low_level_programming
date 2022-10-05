@@ -7,8 +7,8 @@
  */
 int print_to_98(int n)
 {
-	for (n = 0; n <= 98, n++)
-	{	_putchar(n);
+	for (n = 0; n <= 98; n++)
+	{	printf(%d, n);
 		_putchar(',');
 		_putchar (' ');
 	}

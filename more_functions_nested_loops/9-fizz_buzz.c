@@ -8,9 +8,9 @@
 int main(void)
 {
 	int i;
-	char a = "Fizz";
-	char b = "Buzz";
-	char c = "Fizzbuzz";
+	char a[] = "Fizz";
+	char b[] = "Buzz";
+	char c[] = "Fizzbuzz";
 
 	for (i = 1; i <= 100; i++)
 	{

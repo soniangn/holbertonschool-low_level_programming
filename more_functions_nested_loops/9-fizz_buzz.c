@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * print_fizz - entry point
+ * main - entry point
  * Description: prints numbers from 1 to 100 and Fizz, Buzz, FizzBuzz
  * Return: numbers
  */
-void print_fizz(int i)
+int main(void)
 {
+	int i;
+
 	for (i = 1; i <= 100; i++)
 	{
 		if (i % 3 == 0)
@@ -26,4 +28,5 @@ void print_fizz(int i)
 			printf("%d ", i);
 		}
 	}
+	return (0);
 }

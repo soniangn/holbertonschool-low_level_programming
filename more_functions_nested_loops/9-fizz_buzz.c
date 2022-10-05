@@ -8,25 +8,29 @@
 int main(void)
 {
 	int i;
+	char a = "Fizz";
+	char b = "Buzz";
+	char c = "Fizzbuzz";
 
 	for (i = 1; i <= 100; i++)
 	{
 		if (i % 3 == 0)
 		{
-			printf("Fizz ");
+			printf("%s ", a);
 		}
 		else if (i % 5 == 0)
 		{
-			printf("Buzz ");
+			printf("%s ", b);
 		}
 		else if ((i % 3 == 0) && (i % 5 == 0))
 		{
-			printf("FizzBuzz ");
+			printf("%s ", c);
 		}
 		else
 		{
 			printf("%d ", i);
 		}
 	}
+	printf('\n');
 	return (0);
 }

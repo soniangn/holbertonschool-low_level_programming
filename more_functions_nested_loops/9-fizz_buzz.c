@@ -18,7 +18,7 @@ int main(void)
 		{
 			printf("%s", c);
 		}
-		if ((i % 3 == 0) && (i % 5 == 0))
+		else if ((i % 3 == 0) && (i % 5 == 0))
 		{
 			printf("%s ", a);
 		}
@@ -26,7 +26,7 @@ int main(void)
 		{
 			printf("%s ", b);
 		}
-		else if ((i % 5 == 0) && (i != 100))
+		else if (i % 5 == 0)
 		{
 			printf("%s ", c);
 		}

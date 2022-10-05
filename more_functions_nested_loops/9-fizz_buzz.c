@@ -8,21 +8,21 @@
 int main(void)
 {
 	int i;
-	char a[] = "Fizz";
-	char b[] = "Buzz";
-	char c[] = "Fizzbuzz";
+	char a[] = "Fizzbuzz";
+	char b[] = "Fizz";
+	char c[] = "Buzz";
 
 	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0)
+		if ((i % 3 == 0) && (i % 5 == 0))
 		{
 			printf("%s ", a);
 		}
-		else if (i % 5 == 0)
+		else if (i % 3 == 0)
 		{
 			printf("%s ", b);
 		}
-		else if ((i % 3 == 0) && (i % 5 == 0))
+		else if (i % 5 == 0)
 		{
 			printf("%s ", c);
 		}

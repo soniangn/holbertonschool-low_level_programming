@@ -6,5 +6,9 @@
  */
 void times_table(void)
 {
-	
+	int i;
+
+	for (i = 0; i =< 9; i++)
+		return (i * 9);
+		_putchar('\n');
 }

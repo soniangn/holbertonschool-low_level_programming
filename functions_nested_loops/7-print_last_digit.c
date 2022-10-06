@@ -8,9 +8,9 @@
 int print_last_digit(int i)
 {
 	if (i >= 0)
-		printf(i % 10);
+		printf("%d", 10%i);
 	else
-		printf(-i % 10);
+		printf("d", 10%i);
 	_putchar ('\n');
 	return (0);
 }

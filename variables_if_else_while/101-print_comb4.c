@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - entry point
- * Description: prints all possible combination of three 
+ * Description: prints all possible combination of three
  * Return: 0
  */
 int main(void)
@@ -13,12 +13,12 @@ int main(void)
 		for (j = '0'; j <= '9'; j++)
 		{
 			for (k = '0'; k <= '9'; k++)
-				if (((i != j) && (i < j)) && ((i != k) && (i < k)) && ((j != k) && (j < k)))
+				if ((i != j) && (i < j) && (i != k) && (i < k) && (j != k) && (j < k))
 				{
 					putchar(i);
 					putchar(j);
 					putchar(k);
-					if (i < '8')
+					if (i < '7')
 					{
 						putchar(',');
 						putchar (' ');

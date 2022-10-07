@@ -10,10 +10,13 @@ int main(void)
 	int j = 0;
 
 	while (i < 1024)
+	{
 		if ((i % 3 == 0) || (i % 5 == 0))
 		{
 			j = j + i;
 			i++;
 		}
-	return (j);
+	}
+	printf("%d", j);
+	return (0);
 }

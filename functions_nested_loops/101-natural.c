@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * print_natural - entry point
  * Description: prints the sum of multiples of 3 or 5 below 1024 (excluded)

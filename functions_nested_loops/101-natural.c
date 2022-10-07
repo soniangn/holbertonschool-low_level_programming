@@ -18,6 +18,6 @@ int main(void)
 		}
 		i++;
 	}
-	printf("%d", j);
+	printf("%d\n", j);
 	return (0);
 }

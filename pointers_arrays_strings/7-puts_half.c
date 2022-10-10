@@ -8,8 +8,17 @@
  */
 void puts_half(char *str)
 {
-	int length_of_the_string = ('\0' - str[0]);
-	n = ((length_of_the_string - 1) / 2);
+	int i;
+	int n = ((i - 1) / 2);
+
+	int i = 0;
+
+	while (*str != '\0')
+	{
+		i++;
+		str++;
+	}
+		return (i);
 
 	for (; str[n] != '\0'; n++)
 	{

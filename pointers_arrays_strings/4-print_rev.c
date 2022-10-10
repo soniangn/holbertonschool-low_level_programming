@@ -7,11 +7,12 @@
  * Return: string in reverse
  */
 void print_rev(char *s)
-{	
-	while (*s != '\0')
+{
+	int i;
+
+	for (i = '\0'; i > *s; i--)
 	{
 		_putchar(*s);
-		s--;
 	}
 
 	_putchar('\n');

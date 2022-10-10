@@ -13,7 +13,7 @@ void puts2(char *str)
 	for (*str = 0; *str != '\0'; str++)
 	{
 		if (i % 2 == 0)
-			_putchar(*str[i]);
+			_putchar(str[i]);
 	}
 
 	_putchar('\n');

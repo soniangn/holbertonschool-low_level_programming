@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * puts_half - entry point
  * @str: a string
@@ -8,12 +8,20 @@
  */
 void puts_half(char *str)
 {
-	int n = 0;
+	int i = 0, j, n;
 
-	while (str[n] != '\0')
+	while (*str != '\0')
 	{
-		n++;
+		i++;
 	}
-	_putchar(n + '0');
+	
+	if ((i % 2) == 0)
+		n = i / 2;
+	else
+		n = (i - 1) / 2;
+
+	for (j = n; j < i; j++)
+		_putchar(str[j]);
+
 	_putchar('\n');
 }

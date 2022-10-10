@@ -17,7 +17,7 @@ void print_rev(char *s)
 		j++;
 	}
 
-	for (; s[i] > s[j]; s--)
+	for (; s[i] > s[j]; i--)
 	{
 		_putchar(*s);
 	}

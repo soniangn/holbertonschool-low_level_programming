@@ -16,6 +16,5 @@ char _strcmp(char *s1, char *s2)
 		for (j = 0; s2[j] != '\0'; j++)
 			_putchar(s2[j] - s1[i]);	
 	}
-
 	_putchar('\n');
 }

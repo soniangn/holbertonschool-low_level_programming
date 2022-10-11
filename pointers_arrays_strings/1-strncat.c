@@ -2,8 +2,9 @@
 
 /**
  * *_strncat - entry point
- * @dest: a string
- * @src: a string
+ * @dest: string to append
+ * @src: string that will be appended
+ * @n: n bytes from src
  * Description: appends the src string to the dest string
  * Return: pointer to the string dest
  */

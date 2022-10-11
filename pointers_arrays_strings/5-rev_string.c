@@ -17,11 +17,11 @@ void rev_string(char *s)
 		i++;
 	}
 
-	for (j = i - 1; j >= 0; j--)
+	for (j = i - 1; j >= (i / 2); j--)
 	{
 		k = s[j];
-		s[j] = s[i];
-		s[i] = k;
+		s[j] = s[i - j];
+		s[i - j]] = k;
 	}
 
 	_putchar('\n');

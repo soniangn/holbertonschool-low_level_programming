@@ -20,8 +20,8 @@ void rev_string(char *s)
 	for (j = i - 1; j >= (i / 2); j--)
 	{
 		k = s[j];
-		s[j] = s[i - j];
-		s[i - j] = k;
+		s[j] = s[i - j - 1];
+		s[i - j - 1] = k;
 	}
 
 	_putchar('\n');

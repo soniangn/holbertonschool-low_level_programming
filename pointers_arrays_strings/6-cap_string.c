@@ -12,7 +12,7 @@ char *cap_string(char *s)
 	int n = 0;
 	int a[10] = {33, 34, 40, 41, 44, 46, 59, 63, 123, 125};
 	
-	while (s[i] != a[n])
+	while (s[i] == a[n])
 	{
 		for (; s[i + 2] != '\0'; i++)
 		{

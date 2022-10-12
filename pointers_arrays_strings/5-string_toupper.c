@@ -10,10 +10,10 @@ char *string_toupper(char *)
 {
 	int i;
 
-	for (i = 0; * != '\0'; i++)
+	for (i = 0; *_ != '\0'; i++)
 	{
-		if (* >= 'a' && * <= 'a')
-			* -= 32;
+		if (*_ >= 'a' && *_ <= 'a')
+			*_ -= 32;
 	}
-	return (*);
+	return (*_);
 }

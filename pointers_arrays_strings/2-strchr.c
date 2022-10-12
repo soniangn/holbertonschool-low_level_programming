@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stddef.h>
 /**
  * *_strchr - entry point
  * @s: a string
@@ -13,7 +13,7 @@ char *_strchr(char *s, char c)
 {
 	while (*s++)
 	{
-		if (*s == 'c')
+		if (*s == c)
 			return (s);
 		else
 			return (NULL);

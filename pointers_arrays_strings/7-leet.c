@@ -16,9 +16,10 @@ char *leet(char *s)
 	
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (n = 0; s[i] == a[n] || s[i] == b[n]; n++)
+		for (n = 0; n < 5; n++)
 		{
-			s[i] == c[n];
+			if (s[i] == b[n] || s[i] == b[n])
+				s[i] == c[n];
 		}
 	}
 	return (s);

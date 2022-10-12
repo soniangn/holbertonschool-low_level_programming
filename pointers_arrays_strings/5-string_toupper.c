@@ -6,14 +6,14 @@
  *				to uppercase
  * Return: uppercase string
  */
-char *string_toupper(char *s)
+char *string_toupper(char *)
 {
 	int i;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; * != '\0'; i++)
 	{
-		if (s[i] >= 'a' && s[i] <= 'a')
-			s[i] -= 32;
+		if (* >= 'a' && * <= 'a')
+			* -= 32;
 	}
-	return (s);
+	return (*);
 }

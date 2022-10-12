@@ -14,12 +14,13 @@ char *cap_string(char *s)
 	
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] == a[n])
+		for (; s[i] == a[n]; n++)
 		{
 			if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+			{
 				s[i + 1] -= 32;
+			}
 		}
-		n++;
 	}
 	return (s);
 }

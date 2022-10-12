@@ -19,13 +19,12 @@ char *cap_string(char *s)
 			s[i] -= 32;
 		}
 
-		if (s[i] == a[n])
+		for (; n <= 13; n++)
 		{
-			if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+			if (s[i] == a[n] && [i + 1] >= 'a' && s[i + 1] <= 'z')
 			{
 				s[i + 1] -= 32;
 			}
-		n++;
 		}
 	}
 	return (s);

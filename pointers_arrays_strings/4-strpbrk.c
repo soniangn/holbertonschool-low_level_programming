@@ -12,8 +12,7 @@
 char *_strpbrk(char *s, char *accept)
 {
 	unsigned int i;
-	unsigned int n = 0;
-
+	
 	while (*s++)
 	{
 		for (i = 0; i != '\0'; i++)
@@ -24,4 +23,5 @@ char *_strpbrk(char *s, char *accept)
 				return (NULL);
 		}
 	}
+	return (0);
 }

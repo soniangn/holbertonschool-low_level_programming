@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stddef.h>
+
 /**
  * *_strpbrk - entry point
  * @s: a string

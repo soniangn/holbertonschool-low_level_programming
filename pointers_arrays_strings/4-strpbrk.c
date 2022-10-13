@@ -8,9 +8,9 @@
  * Return: a pointer to the byte in s that matches one of the
  *         bytes in accept, or NULL if no such byte is found
  */
-unsigned int *_strpbrk(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
-	unsigned int i, j;
+	int i, j;
 
 	for (i = 0; s[i]; i++)
 	{

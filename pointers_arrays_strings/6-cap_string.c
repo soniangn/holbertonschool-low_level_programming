@@ -23,14 +23,12 @@ char *cap_string(char *s)
 		{
 			if (s[i] == a[n])
 			{
-				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+				printf("%d", n);
+				/*if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
 				{
 					s[i + 1] -= 32;
-				}
+				}*/
 			} 
-			else
-			{
-				continue;
 		}
 	}
 	return (s);

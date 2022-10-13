@@ -12,10 +12,10 @@ unsigned int _strspn(char *s, char *accept)
 	unsigned int i = 0;
 	unsigned int j = 0;
 	unsigned int n = 0;
-	
+
 	for (; i != '\0'; i++)
 	{
-		for (; j!= '\0'; n++) 
+		for (; j != '\0'; j++)
 		{
 			if (s[j] == accept[i])
 				n++;

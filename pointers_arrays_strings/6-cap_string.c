@@ -20,15 +20,14 @@ char *cap_string(char *s)
 			s[i] -= 32;
 		}
 
-		for (; n < 13; n++)
+		for (n = 0; n < 13; n++)
 		{
 			if (s[i] == a[n])
 			{
-				printf("%d", n);
-				/*if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
 				{
 					s[i + 1] -= 32;
-				}*/
+				}
 			} 
 		}
 	}

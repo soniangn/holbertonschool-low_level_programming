@@ -10,7 +10,7 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i, j, n, o, result;
+	int i, j, n, o;
 
 	for (i = 0; i <= size; i++)
 	{
@@ -22,7 +22,6 @@ void print_diagsums(int *a, int size)
 				o += *(a + i + j);
 		}
 	}
-	result = n + o;
-	printf("%d", result);
+	printf("%d, %d", n, o);
 	printf("\n");
 }

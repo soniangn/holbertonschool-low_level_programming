@@ -20,7 +20,7 @@ void print_diagsums(int *a, int size)
 		o += a[i];
 	}
 
-	for (j = size; j < n; j += size - 1)
+	for (j = size - 1; j < n - 1; j += size - 1)
 	{
 		p += a[j];
 	}

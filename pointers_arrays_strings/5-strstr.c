@@ -10,7 +10,7 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i, n = 0;
+	int i;
 
 	while (*haystack++)
 	{
@@ -19,7 +19,7 @@ char *_strstr(char *haystack, char *needle)
 			if (needle[i + 1] == '\0')
 				return (haystack);
 			i++;
-			haystack = n + 1;
+			haystack++;
 		}
 	}
 	return (NULL);

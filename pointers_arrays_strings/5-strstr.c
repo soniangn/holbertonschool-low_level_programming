@@ -17,10 +17,10 @@ char *_strstr(char *haystack, char *needle)
 	{
 		for (i = 0; needle[i]; i++)
 		{
-			if (needle[i] == *haystack)
+			while (needle[i] == haystack)
 				n++;
-			else if (needle[i] == '\0')
-				return (haystack + n);
+			if (needle[i] == '\0')
+				return (haystack);
 		}
 	}
 	return (NULL);

@@ -21,9 +21,9 @@ char *_strstr(char *haystack, char *needle)
 			i++;
 		}
 		haystack++;
-
-		if (*needle == 0)
-			return (haystack);
 	}
+
+	if (*needle == 0)
+		return (haystack);
 	return (NULL);
 }

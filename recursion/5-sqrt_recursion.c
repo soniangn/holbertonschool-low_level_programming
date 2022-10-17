@@ -13,7 +13,7 @@ int square(int n, float sq)
 	if ((sq * sq) == n)
 		return (sq);
 	else
-		return (square (n, sq + 1));	
+		return (square(n, sq + 1));
 }
 
 /**

@@ -10,6 +10,8 @@
 
 int check_prime(int i, int n)
 {
+	if (n <= 0)
+		return (0);
 	if (n == i)
 		return (0); 
 	if (n % 2 == 0)

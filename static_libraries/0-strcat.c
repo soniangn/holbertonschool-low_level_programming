@@ -1,14 +1,13 @@
 #include "main.h"
 
 /**
- * *_strncat - entry point
- * @dest: string to append
- * @src: string that will be appended
- * @n: n bytes from src
+ * *_strcat - entry point
+ * @dest: a string
+ * @src: a string
  * Description: appends the src string to the dest string
  * Return: pointer to the string dest
  */
-char *_strncat(char *dest, char *src, int n)
+char *_strcat(char *dest, char *src)
 {
 	int i = 0;
 	int j = 0;
@@ -18,7 +17,7 @@ char *_strncat(char *dest, char *src, int n)
 		i++;
 	}
 
-	for (j = 0; j < n && src[j] != '\0'; j++)
+	for (j = 0; src[j] != '\0'; j++)
 	{
 		dest[i + j] = src[j];
 	}

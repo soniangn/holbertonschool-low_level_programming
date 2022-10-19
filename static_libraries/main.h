@@ -1,5 +1,5 @@
-#ifndef main.h
-#define main.h
+#ifndef MAIN.H
+#define MAIN.H
 int _putchar(char c);
 int _islower(int c);
 int _isalpha(int c);

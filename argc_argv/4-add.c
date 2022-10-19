@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <ctype.h>
 #include <stdlib.h>
 
 /**
@@ -20,14 +21,14 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; i++)
 	{
-		if (!atoi(argv[i]))
+		if (isdigit(*argv[i]))
 		{
-			printf("%s\n", "Error");
-			return (1);
+			n += atoi(argv[i]);
 		}
 		else
 		{
-			n += atoi(argv[i]);
+			printf("Error\n");
+			return (1);
 		}
 	}
 	printf("%d\n", n);

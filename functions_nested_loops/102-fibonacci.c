@@ -13,7 +13,7 @@ int main(void)
 
 	while (n < 50)
 	{
-		i = (i - 1) + (i - 2);
+		i = (i - 1) + (j - 2);
 		printf("%d, ", i);
 		n++;
 	}

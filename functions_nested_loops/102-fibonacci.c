@@ -7,13 +7,13 @@
  */
 int main(void)
 {
-	int i;
-	int n;
+	int i = 1;
+	int n; 
 
 	while (n < 50)
 	{
-		while (i < 0)
-			_putchar((i - 1) + (i - 2));
+		i = (i - 1) + (i - 2);
+		printf("%d", i);
 		n++;
 	}
 	return (0);

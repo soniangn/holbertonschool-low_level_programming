@@ -1,2 +1,3 @@
-# holbertonschool-low_level_programming
-C begins
+# General Info
+
+This is the repository for Holberton School projects on low level programming

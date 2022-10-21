@@ -1,4 +1,4 @@
-#C - Pointers, arrays and strings
+# C - Pointers, arrays and strings
 
 ## Learning Objectives
 - What are pointers and how to use them

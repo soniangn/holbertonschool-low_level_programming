@@ -2,10 +2,11 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * *_strdup - entry point
- * @str: string
+ * @str: string to copy
  * Description: see below
  *	Return: a pointer to a newly allocated space in memory,
  *			which contains a copy of the string given
@@ -21,11 +22,7 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	while (*str)
-	{
-		length++;
-		str++;
-	}
+	length = strlen(str);
 
 	copy = malloc((length + 1) * sizeof(char));
 

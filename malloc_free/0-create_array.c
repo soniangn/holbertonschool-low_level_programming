@@ -27,7 +27,7 @@ char *create_array(unsigned int size, char c)
 
 	if (s == NULL)
 	{
-		printf("Can't allocates bytes");
+		printf("Can't allocate memory");
 	}
 
 	return (s);

@@ -23,7 +23,13 @@ char *create_array(unsigned int size, char c)
 
 	for (; i < size; i++)
 		s[i] = c;
-	
+
+	if (s == NULL)
+	{
+		printf("Can't allocates bytes");
+		return (1);
+	}
+
 	return (s);
 	free(s);
 }

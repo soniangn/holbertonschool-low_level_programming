@@ -2,6 +2,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * *str_concat - entry point
@@ -21,17 +22,8 @@ char *str_concat(char *s1, char *s2)
 	int length_s1 = 0;
 	int length_s2 = 0;
 
-	while (*s1)
-	{
-		length_s1++;
-		s1++;
-	}
-
-	while (*s2)
-	{
-		length_s2++;
-		s2++;
-	}
+	length_s1 = strlen(s1);
+	length_s2 = strlen(s2);
 
 	concat = malloc((length_s1 + length_s2 + 1) * sizeof(char));
 
@@ -42,14 +34,14 @@ char *str_concat(char *s1, char *s2)
 	{
 		concat[i] = *s1;
 		i++;
-		concat++;
+		s1++;
 	}
 
 	while (*s2 != '\0')
 	{
 		concat[i] = *s2;
 		i++;
-		concat++;
+		s2++;
 	}
 
 	concat[length_s1 + length_s2] = '\0';

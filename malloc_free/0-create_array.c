@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * *create_array - entry point
@@ -27,7 +28,6 @@ char *create_array(unsigned int size, char c)
 	if (s == NULL)
 	{
 		printf("Can't allocates bytes");
-		return (1);
 	}
 
 	return (s);

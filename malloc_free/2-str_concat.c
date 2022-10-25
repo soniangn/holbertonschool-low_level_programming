@@ -21,6 +21,12 @@ char *str_concat(char *s1, char *s2)
 	int i = 0;
 	int length_s1 = 0;
 	int length_s2 = 0;
+	
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
 
 	length_s1 = strlen(s1);
 	length_s2 = strlen(s2);
@@ -29,12 +35,6 @@ char *str_concat(char *s1, char *s2)
 
 	if (concat == NULL)
 		return (NULL);
-
-	if (s1 == NULL)
-		s1 = "";
-	
-	if (s2 == NULL)
-		s2 = "";
 
 	while (*s1 != '\0')
 	{

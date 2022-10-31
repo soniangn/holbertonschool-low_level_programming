@@ -3,6 +3,7 @@
 
 /*
  * struct dog - new structure for dog
+ * Description: defines new structure for dog
  */
 
 struct dog

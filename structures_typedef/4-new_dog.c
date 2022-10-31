@@ -14,17 +14,25 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d;
-	
+	char *copy_name;
+	char *copy_owner;
+	int i;
+
 	d = malloc(sizeof(dog_t));
 	if (d == NULL)
 	{
 		return (NULL);
-		free (d);
+		free(d);
 	}
 
-	d->name = name;	
+	for (i = 0; s[i] != '\0'; i++)
+		copy_name[i] = name[i];
+
+	for (i = 0; s[i] != '\0'; i++)
+		copy_ower[i] = owner[i];
+
+	d->name = name;
 	d->age = age;
 	d->owner = owner;
-	memcpy(name, owner);
 	return (d);
 }

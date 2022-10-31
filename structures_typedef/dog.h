@@ -1,7 +1,7 @@
 #ifndef DOG_H
 #define DOG_H
 
-/*
+/**
  * struct dog - new structure for dog
  * Description: defines new structure for dog
  */

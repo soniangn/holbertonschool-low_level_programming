@@ -39,8 +39,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	for (i = 0; owner[i] != '\0'; i++)
 		 copy_owner[i] = owner[i];
 
-	d->name = name;
+	d->name = copy_name;
 	d->age = age;
-	d->owner = owner;
+	d->owner = copy_owner;
 	return (d);
 }

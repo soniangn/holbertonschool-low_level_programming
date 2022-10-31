@@ -29,10 +29,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 	length_owner = strlen(owner);
 
 	d->name = malloc(sizeof(char) * length_name + 1);
+	if (d->name == NULL)
+		free(d);
+
 	d->owner = malloc(sizeof(char) * length_owner + 1);
+	if (d->owner == NULL)
+		free(d);
 
 	for (i = 0; name[i] != '\0'; i++)
 		d->name[i] = name[i];
+	
 
 	for (i = 0; owner[i] != '\0'; i++)
 		 d->owner[i] = owner[i];

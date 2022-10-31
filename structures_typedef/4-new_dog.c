@@ -38,11 +38,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(d);
 	}
 
-	for (i = 0; name[i] != '\0'; i++)
-		d->name[i] = name[i];
-
-	for (i = 0; owner[i] != '\0'; i++)
-		 d->owner[i] = owner[i];
+	strcpy(d->name; name);
+	strcpy(d->owner; owner);
 
 	d->age = age;
 	return (d);

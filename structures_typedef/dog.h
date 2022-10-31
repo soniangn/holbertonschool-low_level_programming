@@ -4,6 +4,9 @@
 /**
  * struct dog - new structure for dog
  * Description: defines new structure for dog
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
  */
 
 struct dog

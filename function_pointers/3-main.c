@@ -24,12 +24,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	
-	if (argv[2] == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	
 	if ((operator == '/' || operator == '%') && num2 == '0')
 	{
 		printf("Error\n");

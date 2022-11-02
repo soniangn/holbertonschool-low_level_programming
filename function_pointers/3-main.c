@@ -18,8 +18,6 @@ int main(int argc, char *argv[])
 	int operator = *argv[2];
 	int (*result)(int, int);
 
-	result = (get_op_func(argv[2]));
-
 	if (argc != 4)
 	{
 		printf("Error\n");
@@ -37,6 +35,8 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
+
+	result = (get_op_func(argv[2]));
 
 	printf("%d\n", result(num1, num2));
 	return (0);

@@ -24,6 +24,8 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	
+	result = (get_op_func(argv[2]));
+
 	if (result == NULL)
 	{
 		printf("Error\n");
@@ -35,8 +37,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-
-	result = (get_op_func(argv[2]));
 
 	printf("%d\n", result(num1, num2));
 	return (0);

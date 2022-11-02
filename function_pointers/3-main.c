@@ -13,8 +13,7 @@
 
 int main(int argc, char *argv[])
 {
-	int num1 = atoi(argv[1]);
-	int num2 = atoi(argv[3]);
+	int num1, num 2;
 	int operator = *argv[2];
 	int (*result)(int, int);
 
@@ -31,6 +30,9 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
+	
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
 
 	if ((operator == '/' || operator == '%') && num2 == 0)
 	{

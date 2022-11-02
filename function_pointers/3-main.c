@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	
+
 	result = (get_op_func(argv[2]));
 
 	if (result == NULL)
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	
+
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 

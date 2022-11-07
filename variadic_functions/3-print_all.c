@@ -17,12 +17,12 @@ void print_char(va_list arg)
 	printf("%c", cht);
 }
 
- /**
-  * print_integer - prints an integer
-  * Description: prints an integer
-  * @arg: a list of arguments to be printed
-  * Return: 0
-  */
+/**
+ * print_integer - prints an integer
+ * Description: prints an integer
+ * @arg: a list of arguments to be printed
+ * Return: 0
+ */
 
 void print_integer(va_list arg)
 {
@@ -32,12 +32,12 @@ void print_integer(va_list arg)
 	printf("%d", number);
 }
 
- /**
-  * print_float - prints a float
-  * Description: prints a float
-  * @arg: a list of arguments to be printed
-  * Return: 0
-  */
+/**
+ * print_float - prints a float
+ * Description: prints a float
+ * @arg: a list of arguments to be printed
+ * Return: 0
+ */
 
 void print_float(va_list arg)
 {
@@ -47,12 +47,12 @@ void print_float(va_list arg)
 	printf("%f", decimal);
 }
 
- /**
-  * print_string - prints a string
-  * Description: prints a string
-  * @arg: a list of arguments to be printed
-  * Return: 0
-  */
+/**
+ * print_string - prints a string
+ * Description: prints a string
+ * @arg: a list of arguments to be printed
+ * Return: 0
+ */
 
 void print_string(va_list arg)
 {
@@ -63,12 +63,12 @@ void print_string(va_list arg)
 	word == NULL ? printf("%p", word) : printf("%s", word);
 }
 
- /**
-  * print_all - entry point
-  * Description: prints anything
-  * @format: list of types of arguments
-  * Return: 0
-  */
+/**
+ * print_all - entry point
+ * Description: prints anything
+ * @format: list of types of arguments
+ * Return: 0
+ */
 
 void print_all(const char * const format, ...)
 {
@@ -99,7 +99,7 @@ void print_all(const char * const format, ...)
 
 			if (format[i + 1] != '\0')
 				printf("%s", separator);
-		}	
+		}
 		i++;
 		n = 0;
 	}

@@ -59,7 +59,7 @@ void print_string(va_list arg)
 
 	word = va_arg(arg, char *);
 
-	word == NULL ? printf("%p\n", word) : printf("%s\n", word);
+	word == NULL ? printf("%p\n", word) : printf("%s", word);
 }
 
  /**

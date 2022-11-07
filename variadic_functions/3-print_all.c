@@ -12,6 +12,7 @@
 void print_char(va_list arg)
 {
 	char cht;
+
 	cht = va_arg(arg, int);
 	printf("%c", cht);
 }
@@ -59,7 +60,7 @@ void print_string(va_list arg)
 
 	word = va_arg(arg, char *);
 
-	word == NULL ? printf("%p\n", word) : printf("%s", word);
+	word == NULL ? printf("%p", word) : printf("%s", word);
 }
 
  /**

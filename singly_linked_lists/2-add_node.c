@@ -25,12 +25,6 @@ list_t *add_node(list_t **head, const char *str)
 
 	copy = strdup(str);
 
-	if (copy == NULL)
-	{
-		return (NULL);
-		free(copy);
-	}
-
 	new_node->str = copy;
 	new_node->len = strlen(copy);
 	new_node->next = *head;

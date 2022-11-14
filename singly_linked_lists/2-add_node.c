@@ -23,10 +23,12 @@ list_t *add_node(list_t **head, const char *str)
 	*head = new_node;
 
 	if (new_node == NULL)
+	{
 		return (NULL);
 		free(copy);
 		free(new_node);
-	else
+	}
+		else
 		return (new_node);
 	free(copy);
 }

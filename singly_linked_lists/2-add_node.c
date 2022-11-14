@@ -23,7 +23,7 @@ list_t *add_node(list_t **head, const char *str)
 		free(new_node);
 	}
 
-	copy = strdup(str)
+	copy = strdup(str);
 
 	if (copy == NULL)
 		return (NULL);

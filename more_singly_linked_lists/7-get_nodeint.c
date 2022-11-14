@@ -21,5 +21,8 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		*p = *p->next;
 	}
 
-	return (p);
+	while (i == index)
+		return (p);
+
+	return (0);
 }

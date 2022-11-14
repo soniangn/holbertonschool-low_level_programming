@@ -23,16 +23,11 @@ list_t *add_node(list_t **head, const char *str)
 		free(new_node);
 	}
 
-	copy = strdup(str);
-
-	new_node->str = copy;
+	new_node->str = strdup(copy);
 	new_node->len = strlen(copy);
 	new_node->next = *head;
 	*head = new_node;
 
 	return (new_node);
-
-	free(copy);
-	free(new_node);
 }
 

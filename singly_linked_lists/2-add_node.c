@@ -17,19 +17,24 @@ list_t *add_node(list_t **head, const char *str)
 	char *copy = strdup(str);
 
 	new_node = malloc(sizeof(list_t));
+	if (new_node == NULL)
+	{
+		return (NULL);
+		free(new_node);
+	}
+
+	if (copy == NULL)
+	{
+		return (NULL);
+	}
+
 	new_node->str = copy;
 	new_node->len = strlen(copy);
 	new_node->next = *head;
 	*head = new_node;
 
-	if (new_node == NULL || copy == NULL)
-	{
-		return (NULL);
-		free(copy);
-		free(new_node);
-	}
-		else
-		return (new_node);
+	return (new_node);
+
 	free(copy);
 }
 

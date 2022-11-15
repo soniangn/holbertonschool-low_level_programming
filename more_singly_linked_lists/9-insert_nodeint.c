@@ -9,7 +9,7 @@
  * Return: the size of the list
  */
 
-/*
+
 unsigned int get_size(listint_t *head)
 {
 	unsigned int size = 0;
@@ -20,7 +20,7 @@ unsigned int get_size(listint_t *head)
 		size++;
 	}
 	return (size);
-} */
+}
 
 /**
  * insert_nodeint_at_index - entry point
@@ -35,11 +35,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *new_node, *previous_node;
 	unsigned int i = 0;
-/*	unsigned int size = get_size(*head);
+	unsigned int size = get_size(*head);
 
 	if (idx > size)
 		return (NULL);
-*/
+
 	new_node = malloc(sizeof(listint_t));
 
 	if (new_node == NULL)
@@ -57,7 +57,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = new_node;
 		return (new_node);
 	}
-	
+
 	previous_node = *head;
 
 	for (; i < idx - 1; i++)

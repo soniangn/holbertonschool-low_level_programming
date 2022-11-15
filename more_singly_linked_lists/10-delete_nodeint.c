@@ -35,7 +35,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int idx)
 {
 	listint_t *previous_node, *current;
 	unsigned int i = 0;
-	unsigned int size = get_size(*head)
+	unsigned int size = get_size(*head);
 
 	if (idx > size)
 		return (-1);

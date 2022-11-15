@@ -3,6 +3,27 @@
 #include <stddef.h>
 
 /**
+ * get_size - entry point
+ * Description: finds the length of the listint_t list
+ * @head: pointer to the head node
+ * Return: the size of the list
+ */
+
+
+unsigned int get_size(listint_t *head)
+{
+	unsigned int size = 0;
+
+	while (head != NULL)
+	{
+		head = head->next;
+		size++;
+	}
+	return (size);
+}
+
+
+/**
  * delete_nodeint_at_index - entry point
  * Description: deletes the node at a given position
  * @head: pointer to the pointer to the head node
@@ -14,6 +35,10 @@ int delete_nodeint_at_index(listint_t **head, unsigned int idx)
 {
 	listint_t *previous_node, *current;
 	unsigned int i = 0;
+	unsigned int size = get_size(*head)
+
+	if (idx > size)
+		return (-1);
 
 	current = *head;
 
@@ -26,7 +51,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int idx)
 		free(current);
 		return (1);
 	}
-	
+
 	previous_node = *head;
 
 	for (; i < idx; i++)

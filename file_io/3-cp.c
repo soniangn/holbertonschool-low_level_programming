@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	
 
 	/* calls the cp function */
 	copy_file(argv[1], argv[2]);
@@ -74,10 +73,10 @@ int copy_file(const char *file_from, const char *file_to)
 	/* Copy file1 to file2 */
 	while (read_file_from)
 	{
-		copied_file = write(open_file_to, buf, 1024);
+		copied_file = write(open_file_to, buf, read);
 		if (copied_file == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to test%s\n", file_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			exit(99);
 		}
 	}

@@ -33,11 +33,11 @@ int main(int argc, char *argv[])
  * @file: pointer to a file
  * Return: buffer
  */
-char *use_buffer(char *file)
+int *use_buffer(char *file)
 {
-	char *buf;
+	int *buf;
 
-	buf = malloc(sizeof(char) * 2014;
+	buf = malloc(2014);
 	if (buf == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
@@ -54,10 +54,10 @@ char *use_buffer(char *file)
  * @file_to: pointer to the destination file
  * Return: 0
  */
-int copy_file(const char *file_from, const char *file_to)
+int copy_file(char *file_from, char *file_to)
 {
 	int open_file_from, open_file_to, copied_file, read_file_from;
-	char *buf;
+	int *buf;
 
 	/* Handles absence of file_from */
 	if (file_from == NULL)
@@ -70,7 +70,7 @@ int copy_file(const char *file_from, const char *file_to)
 	open_file_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	/* Creates a buffer to read 1024 bytes at a time */
-	buf = use_buffer;
+	buf = use_buffer(file_from);
 
 	/* Open and read file_from */
 	open_file_from = open(file_from, O_RDONLY, 0664);

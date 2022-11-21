@@ -27,6 +27,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(temp);
 		return (0);
 	}
+	temp[letters] = '\0';
 
 	o = open(filename, O_RDONLY, 0600);
 	if (o == -1)
@@ -51,5 +52,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	close(o);
 	free(temp);
+	temp == NULL;
 	return (w);
 }

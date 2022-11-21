@@ -37,19 +37,21 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (filename == NULL)
 		return (-1);
 
+	if (text_content == NULL)
+	{
+		if (filename)
+			return (1);
+		else
+			return (-1);
+	}
+
+	/* open file and permits append */
 	open_file = open(filename, O_RDWR | O_APPEND, 0600);
 		if (open_file == -1)
 			return (-1);
 
 	/* appends text content */
-	if (text_content == NULL)
-	{
-		if (filename)
-			return (1);
-		else if (!filename)
-			return (-1);
-	}
-	else
+	if (text_content)
 	{
 		write_file = write(open_file, text_content, length);
 		if (write_file == -1)

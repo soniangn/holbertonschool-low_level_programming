@@ -47,14 +47,7 @@ int copy_file(const char *file_from, const char *file_to)
 	}
 
 	/* Creates or truncates file_to */
-	open_file_to = open(file_to, O_CREAT | O_RDONLY | O_TRUNC, 0664);
-
-	/* Handles failure of file_to creation */
-	if (open_file_to == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-		exit(99);
-	}
+	open_file_to = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
 
 	/* Creates a buffer to read 1024 at a time */
 	buf = malloc(1024);
@@ -74,16 +67,14 @@ int copy_file(const char *file_from, const char *file_to)
 	while (read_file_from)
 	{
 		copied_file = write(open_file_to, buf, read_file_from);
-		if (copied_file == -1)
+		if (open_file_to == -1 || copied_file == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			exit(99);
 		}
 	}
-
 	closure(open_file_from);
 	closure(open_file_to);
-	
 	return (0);
 }
 

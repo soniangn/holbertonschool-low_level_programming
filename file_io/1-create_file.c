@@ -22,8 +22,10 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 
 	if (text_content == NULL)
+	{
 		creat(filename, 0600);
 		write(filename, text_content, length);
+	}
 
 	new_file = creat(filename, 0600);
 

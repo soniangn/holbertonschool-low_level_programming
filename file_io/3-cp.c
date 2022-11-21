@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		exit(97);
-		dprintf(2, "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
 	}
 
 	/* calls the cp function */
@@ -43,7 +43,7 @@ int copy_file(const char *file_from, const char *file_to)
 	if (file_from == NULL)
 	{
 		exit(98);
-		dprintf(stderr, "Error: Can't read from %s", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from %s", file_from);
 	}
 
 	/* Creates or truncates file_to */
@@ -53,7 +53,7 @@ int copy_file(const char *file_from, const char *file_to)
 	if (open_file_to == -1)
 	{
 		exit(99);
-		dprintf(stderr, "Error: Can't write to %s", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
 	}
 
 	/* Creates a buffer to read 1024 at a time */
@@ -67,7 +67,7 @@ int copy_file(const char *file_from, const char *file_to)
 	if (read_file_from == -1)
 	{
 		exit(98);
-		dprintf(stderr, "Error: Can't read from %s", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from %s", file_from);
 	}
 
 	/* Copy file1 to file2 */
@@ -77,16 +77,29 @@ int copy_file(const char *file_from, const char *file_to)
 		if (copied_file == -1)
 		{
 			exit(99);
-			dprintf(stderr, "Error: Can't write to %s", file_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
 		}
 	}
 
-	close(open_file_from);
-	close(open_file_to);
-	if (close(open_file_from) == -1 || close(open_file_to) == -1)
+	closure(open_file_from);
+	closure(open_file_to);
+	
+	return (0);
+}
+
+/**
+ * closure - handles close file
+ * Description: Handles file closure error
+ * @file: file to close
+ * Return: 0
+ */
+void closure(int file)
+{
+	int close_file = close(file);
+
+	if (close_file == -1)
 	{
 		exit(100);
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", open_file_from);
+		dprintf(STDERR_FILENO, "Can't close fd %d\n", file);
 	}
-	return (0);
 }

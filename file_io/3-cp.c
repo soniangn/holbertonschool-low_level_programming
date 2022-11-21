@@ -75,7 +75,7 @@ int copy_file(char *file_from, char *file_to)
 	/* Open and read file_from */
 	open_file_from = open(file_from, O_RDONLY, 0664);
 	read_file_from = read(open_file_from, buf, 1024);
-	if (open_file_from || read_file_from == -1)
+	if (open_file_from == -1 || read_file_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		free(buf);

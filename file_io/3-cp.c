@@ -37,7 +37,7 @@ int *use_buffer(char *file)
 {
 	int *buf;
 
-	buf = malloc(2014);
+	buf = malloc(1024);
 	if (buf == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);

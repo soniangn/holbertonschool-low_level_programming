@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	}
 
 	/* calls the cp function */
-	copy_file1_file2(argv[1], argv[2]);
+	copy_file(argv[1], argv[2]);
 
 	return (0);
 }
@@ -30,60 +30,63 @@ int main(int argc, char *argv[])
 /**
  * copy_file - copies content
  * Description: copies the content of a file to another
- * @file1: pointer to the file1
- * @file2: pointer to the file2
+ * @file_from: pointer to the source file
+ * @file_to: pointer to the destination file
  * Return: 0
  */
-int copy_file1_file2(const char *file1, const char *file2)
+int copy_file(const char *file_from, const char *file_to)
 {
-	int open_file1, open_file2, copied_file;
+	int open_file_from, open_file_to, copied_file, read_file_from;
 	int *buf;
-	ssize_t r;
 
-	/* Handles absence of file1 */
-	if (file1 == NULL)
+	/* Handles absence of file_from */
+	if (file_from == NULL)
 	{
 		exit(98);
-		dprintf(2, "Error: Can't read from %s", file1);
+		dprintf(2, "Error: Can't read from %s", file_from);
+	}
+
+	/* Creates or truncates file_to */
+	open_file_to = open(file_to, O_CREAT | O_RDONLY | O_TRUNC, 0664);
+
+	/* Handles failure of file_to creation */
+	if (open_file_to == -1)
+	{
+		exit(99);
+		dprintf(2, "Error: Can't write to %s", file_to);
 	}
 
 	/* Creates a buffer to read 1024 at a time */
 	buf = malloc(1024);
 	if (buf == NULL)
-	{
-		free(buf);
 		return (-1);
+
+	/* Open and read file_from */
+	open_file_from = open(file_from, O_RDONLY, 0664);
+	read_file_from = read(open_file_from, buf, 1024);
+	if (read_file_from == -1)
+	{
+		exit(98);
+		dprintf(2, "Error: Can't read from %s", file_from);
 	}
 
-	/* Open destination file2 */
-	open_file1 = open(file2, O_CREAT | O_RDONLY | O_TRUNC, 0664);
-
-	/* Handles open failure */
-	if (open_file1 == -1)
+	/* Copy file1 to file2 */
+	while (read_file_from)
 	{
-		exit(99);
-		dprintf(2, "Error: Can't write to %s", file2);
-	}
-
-	open_file2 = open(file1, O_RDONLY, 0664);
-	r = read(open_file2, buf, 1024);
-
-	while (r)
-	{
-		copied_file = write(open_file2, buf, 1024);
+		copied_file = write(open_file_to, buf, 1024);
 		if (copied_file == -1)
 		{
 			exit(99);
-			dprintf(2, "Error: Can't write to %s", file2);
+			dprintf(2, "Error: Can't write to %s", file_to);
 		}
 	}
 
-	close(open_file1);
-	close(open_file2);
-	/* if (close == -1)
+	close(open_file_from);
+	close(open_file_to);
+	if (close == -1)
 	{
 		exit(100);
-		dprintf(2, "Can't close fd %d\n", 
-	}*/
+		dprintf(2, "Can't close fd %d\n", open_file_from);
+	}
 	return (0);
 }

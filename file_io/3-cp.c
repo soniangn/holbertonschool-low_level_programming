@@ -28,6 +28,26 @@ int main(int argc, char *argv[])
 }
 
 /**
+ * use_buffer - creates a buffer
+ * Description: creates a file buffer
+ * @file: pointer to a file
+ * Return: buffer
+ */
+char *use_buffer(char *file)
+{
+	char *buf;
+
+	buf = malloc(sizeof(char) * 2014;
+	if (buf == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+		exit(99);
+	}
+
+	return (buf);
+}
+
+/**
  * copy_file - copies content
  * Description: copies the content of a file to another
  * @file_from: pointer to the source file
@@ -37,7 +57,7 @@ int main(int argc, char *argv[])
 int copy_file(const char *file_from, const char *file_to)
 {
 	int open_file_from, open_file_to, copied_file, read_file_from;
-	int *buf;
+	char *buf;
 
 	/* Handles absence of file_from */
 	if (file_from == NULL)
@@ -47,19 +67,18 @@ int copy_file(const char *file_from, const char *file_to)
 	}
 
 	/* Creates or truncates file_to */
-	open_file_to = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	open_file_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	/* Creates a buffer to read 1024 at a time */
-	buf = malloc(1024);
-	if (buf == NULL)
-		return (-1);
+	/* Creates a buffer to read 1024 bytes at a time */
+	buf = use_buffer;
 
 	/* Open and read file_from */
 	open_file_from = open(file_from, O_RDONLY, 0664);
 	read_file_from = read(open_file_from, buf, 1024);
-	if (read_file_from == -1)
+	if (open_file_from || read_file_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		free(buf);
 		exit(98);
 	}
 
@@ -70,9 +89,11 @@ int copy_file(const char *file_from, const char *file_to)
 		if (open_file_to == -1 || copied_file == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+			free(buf);
 			exit(99);
 		}
 	}
+	free(buf);
 	closure(open_file_from);
 	closure(open_file_to);
 	return (0);

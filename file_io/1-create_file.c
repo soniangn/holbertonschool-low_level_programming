@@ -13,10 +13,10 @@ int _strlen(char *s)
 {
 	int count = 0;
 
-	while (s)
+	while (s[count])
 		count++;
 
-	return (count + 1);
+	return (count);
 }
 
 /**
@@ -30,7 +30,7 @@ int _strlen(char *s)
  */
 int create_file(const char *filename, char *text_content)
 {
-	int length = _strlen(text_content);
+	int length = _strlen(text_content) + 1;
 	int new_file, write_file;
 
 	if (filename == NULL)

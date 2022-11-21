@@ -83,7 +83,7 @@ int copy_file(const char *file_from, const char *file_to)
 
 	close(open_file_from);
 	close(open_file_to);
-	if (close == -1)
+	if (close(open_file_from) == -1 || close(open_file_to) == -1)
 	{
 		exit(100);
 		dprintf(2, "Can't close fd %d\n", open_file_from);

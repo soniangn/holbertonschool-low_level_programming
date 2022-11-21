@@ -31,22 +31,22 @@ int _strlen(char *s)
 int create_file(const char *filename, char *text_content)
 {
 	int length = _strlen(text_content);
-	int new_file;
+	int new_file, write_file;
 
 	if (filename == NULL)
 		return (-1);
 
 	new_file = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
-	if (o == -1)
+	if (new_file == -1)
 		return (-1);
 
 	if (text_content)
 	{
-		write(new_file, text_content, length);
-		if (w == -1)
+		write_file = write(new_file, text_content, length);
+		if (write_file == -1)
 			return (-1);
 	}
 
-	close(o);
+	close(new_file);
 	return (1);
 }

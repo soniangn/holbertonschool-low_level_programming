@@ -73,7 +73,7 @@ int copy_file(const char *file_from, const char *file_to)
 	/* Copy file1 to file2 */
 	while (read_file_from)
 	{
-		copied_file = write(open_file_to, buf, read);
+		copied_file = write(open_file_to, buf, read_file_from);
 		if (copied_file == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);

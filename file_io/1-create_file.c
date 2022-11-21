@@ -30,7 +30,7 @@ int _strlen(char *s)
  */
 int create_file(const char *filename, char *text_content)
 {
-	int length = _strlen(text_content);
+	int length;
 	int new_file, write_file;
 
 	if (filename == NULL)
@@ -44,6 +44,7 @@ int create_file(const char *filename, char *text_content)
 	/* write text content */
 	if (text_content != NULL)
 	{
+		length = _strlen(text_content);
 		write_file = write(new_file, text_content, length);
 		if (write_file == -1)
 			return (-1);

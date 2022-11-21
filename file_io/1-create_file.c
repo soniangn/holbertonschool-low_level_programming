@@ -4,6 +4,22 @@
 #include <stdlib.h>
 #include <string.h>
 /**
+ * _strlen - entry point
+ * Description: return the length of the string
+ * @s: pointer to a string
+ * Return: the length of the string
+ */
+int _strlen(char *s)
+{
+	int count = 0;
+
+	while (s)
+		count++;
+
+	return (count + 1);
+}
+
+/**
  * create_file - entry point
  * Description: creates a file
  * @filename: pointer to the name of the file to create
@@ -14,25 +30,23 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	char new_file, file_content;
-	int *temp;
-	int length = strlen(text_content);
+	int length = _strlen(text_content);
+	int new_file;
 
 	if (filename == NULL)
 		return (-1);
 
-	if (text_content == NULL)
-	{
-		creat(filename, 0600);
-		write(filename, text_content, length);
-	}
-
-	new_file = creat(filename, 0600);
-
-	file_content = write(new_file, text_content, strlen(text_content));
-	if (file_content == -1)
+	new_file = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
+	if (o == -1)
 		return (-1);
 
-	close(new_file);
+	if (text_content)
+	{
+		write(new_file, text_content, length);
+		if (w == -1)
+			return (-1);
+	}
+
+	close(o);
 	return (1);
 }

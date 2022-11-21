@@ -43,7 +43,7 @@ int copy_file(const char *file_from, const char *file_to)
 	if (file_from == NULL)
 	{
 		exit(98);
-		dprintf(2, "Error: Can't read from %s", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from %s", file_from);
 	}
 
 	/* Creates or truncates file_to */
@@ -53,7 +53,7 @@ int copy_file(const char *file_from, const char *file_to)
 	if (open_file_to == -1)
 	{
 		exit(99);
-		dprintf(2, "Error: Can't write to %s", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
 	}
 
 	/* Creates a buffer to read 1024 at a time */
@@ -67,7 +67,7 @@ int copy_file(const char *file_from, const char *file_to)
 	if (read_file_from == -1)
 	{
 		exit(98);
-		dprintf(2, "Error: Can't read from %s", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from %s", file_from);
 	}
 
 	/* Copy file1 to file2 */
@@ -77,7 +77,7 @@ int copy_file(const char *file_from, const char *file_to)
 		if (copied_file == -1)
 		{
 			exit(99);
-			dprintf(2, "Error: Can't write to %s", file_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
 		}
 	}
 
@@ -86,7 +86,7 @@ int copy_file(const char *file_from, const char *file_to)
 	if (close(open_file_from) == -1 || close(open_file_to) == -1)
 	{
 		exit(100);
-		dprintf(2, "Can't close fd %d\n", open_file_from);
+		dprintf(STDERR_FILENO, "Can't close fd %d\n", open_file_from);
 	}
 	return (0);
 }

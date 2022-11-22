@@ -4,6 +4,23 @@
 #include <stdio.h>
 
 /**
+ * get_size - finds the length of the link
+ * Description: finds the length of the linked list
+ * @h: pointer to the head node
+ * Return: size of the list
+ */
+unsigned int get_size(dlistint_t *h)
+{
+	unsigned int size = 0;
+
+	while (h != NULL)
+	{
+		size++;
+		head = head->next;
+	}
+}
+
+/**
  * insert_dnodeint_at_index - entry point
  * Description: inserts a new node at a given node
  * @h: double pointer to the head node
@@ -15,6 +32,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *prev_node, *new_node;
 	unsigned int i = 0;
+	unsigned int size = get_size(*h);
+
+	if (idx > size)
+		return (NULL);
 
 	new_node = malloc(sizeof(dlistint_t));
 	if (new_node == NULL)

@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
  * @file: pointer to a file
  * Return: buffer
  */
-char *use_buffer(char *file)
+/*char *use_buffer(char *file)
 {
 	char *buf;
 
@@ -45,7 +45,7 @@ char *use_buffer(char *file)
 	}
 
 	return (buf);
-}
+}*/
 
 /**
  * copy_file - copies content
@@ -57,7 +57,7 @@ char *use_buffer(char *file)
 int copy_file(char *file_from, char *file_to)
 {
 	int open_file_from, open_file_to, read_file_from;
-	char *buf;
+	char buf[1024];
 
 	/* Handles absence of file_from */
 	if (file_from == NULL)
@@ -70,7 +70,7 @@ int copy_file(char *file_from, char *file_to)
 	open_file_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	/* Creates a buffer to read 1024 bytes at a time */
-	buf = use_buffer(file_from);
+	/*buf = use_buffer(file_from);*/
 
 	/* Open and read file_from */
 	open_file_from = open(file_from, O_RDONLY);

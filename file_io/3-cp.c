@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
 	if (argv[2] == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 
@@ -82,14 +82,14 @@ int copy_file(char *file_from, char *file_to)
 			exit(99);
 		}
 	}
-	handle_close(open_file_to);
-	handle_close(open_file_from);
+	closing(open_file_to);
+	closing(open_file_from);
 }
 
 /**
  * Close the opened files and handles their closing
  */
-void handle_close(file)
+void closing(int file)
 {
 	if (close(open_file_to) == -1)
 	{

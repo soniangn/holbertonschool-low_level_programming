@@ -56,8 +56,7 @@ int *use_buffer(char *file)
  */
 int copy_file(char *file_from, char *file_to)
 {
-	int open_file_from, open_file_to, copied_file, read_file_from;
-	int *buf;
+	int open_file_from, open_file_to, copied_file, read_file_from, *buf;
 
 	/* Handles absence of file_from */
 	if (file_from == NULL)
@@ -81,9 +80,8 @@ int copy_file(char *file_from, char *file_to)
 		free(buf);
 		exit(98);
 	}
-
 	/* Copy file1 to file2 */
-	while (read_file_from)
+	while (read_file_from >= 1024)
 	{
 		copied_file = write(open_file_to, buf, read_file_from);
 		if (open_file_to == -1 || copied_file == -1)
@@ -94,18 +92,19 @@ int copy_file(char *file_from, char *file_to)
 		}
 	}
 	free(buf);
-	closure(open_file_from);
-	closure(open_file_to);
+	/* Close the opened files and handles their closing*/
+	closing(open_file_from);
+	closing(open_file_to);
 	return (0);
 }
 
 /**
- * closure - handles close file
+ * closing - handles close file
  * Description: Handles file closure error
  * @file: file to close
  * Return: 0
  */
-void closure(int file)
+void closing(int file)
 {
 	int close_file = close(file);
 

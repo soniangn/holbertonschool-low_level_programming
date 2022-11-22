@@ -21,6 +21,12 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
+	if (argv[2] == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+		exit(99);
+	}
+
 	/* calls the cp function */
 	copy_file(argv[1], argv[2]);
 
@@ -45,7 +51,6 @@ int copy_file(char *file_from, char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from);
 		exit(98);
 	}
-
 	/* Creates or truncates file_to */
 	open_file_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (open_file_to == -1)
@@ -77,7 +82,15 @@ int copy_file(char *file_from, char *file_to)
 			exit(99);
 		}
 	}
-	/* Close the opened files and handles their closing*/
+	handle_close(open_file_to);
+	handle_close(open_file_from);
+}
+
+/**
+ * Close the opened files and handles their closing
+ */
+void handle_close(file)
+{
 	if (close(open_file_to) == -1)
 	{
 		exit(100);
@@ -88,5 +101,4 @@ int copy_file(char *file_from, char *file_to)
 		exit(100);
 		dprintf(STDERR_FILENO, "Can't close fd %d\n", open_file_from);
 	}
-	return (0);
 }

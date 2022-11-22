@@ -33,9 +33,9 @@ int main(int argc, char *argv[])
  * @file: pointer to a file
  * Return: buffer
  */
-int *use_buffer(char *file)
+char *use_buffer(char *file)
 {
-	int *buf;
+	char *buf;
 
 	buf = malloc(1024);
 	if (buf == NULL)
@@ -56,7 +56,8 @@ int *use_buffer(char *file)
  */
 int copy_file(char *file_from, char *file_to)
 {
-	int open_file_from, open_file_to, read_file_from, *buf;
+	int open_file_from, open_file_to, read_file_from;
+	char *buf;
 
 	/* Handles absence of file_from */
 	if (file_from == NULL)
@@ -72,7 +73,7 @@ int copy_file(char *file_from, char *file_to)
 	buf = use_buffer(file_from);
 
 	/* Open and read file_from */
-	open_file_from = open(file_from, O_RDONLY, 0664);
+	open_file_from = open(file_from, O_RDONLY);
 	read_file_from = read(open_file_from, buf, 1024);
 	if (open_file_from == -1 || read_file_from == -1)
 	{

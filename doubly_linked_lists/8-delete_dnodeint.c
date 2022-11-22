@@ -31,7 +31,7 @@ unsigned int get_size(dlistint_t *h)
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int idx)
 {
-	dlistint_t *prev_node, *current;
+	dlistint_t *current;
 	unsigned int i = 0;
 	unsigned int size = get_size(*head);
 

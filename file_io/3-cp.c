@@ -56,7 +56,7 @@ int *use_buffer(char *file)
  */
 int copy_file(char *file_from, char *file_to)
 {
-	int open_file_from, open_file_to, copied_file, read_file_from, *buf;
+	int open_file_from, open_file_to, read_file_from, *buf;
 
 	/* Handles absence of file_from */
 	if (file_from == NULL)

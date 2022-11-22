@@ -18,6 +18,8 @@ unsigned int get_size(dlistint_t *h)
 		size++;
 		h = h->next;
 	}
+	
+	return (size);
 }
 
 /**

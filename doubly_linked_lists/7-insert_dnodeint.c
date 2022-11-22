@@ -16,7 +16,7 @@ unsigned int get_size(dlistint_t *h)
 	while (h != NULL)
 	{
 		size++;
-		head = head->next;
+		h = h->next;
 	}
 }
 

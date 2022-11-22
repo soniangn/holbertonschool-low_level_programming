@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
  */
 int copy_file(char *file_from, char *file_to)
 {
-	int open_file_from, open_file_to, read_file_from;
+	int open_file_from, open_file_to, read_file_from, copied_file;
 	char buf[1024];
 
 	/* Handles absence of file_from */
@@ -70,8 +70,8 @@ int copy_file(char *file_from, char *file_to)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			exit(98);
 		}
-		write(open_file_to, buf, read_file_from);
-		if (open_file_to == -1)
+		copied_file = write(open_file_to, buf, read_file_from);
+		if (copied_file == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			exit(99);
@@ -81,12 +81,12 @@ int copy_file(char *file_from, char *file_to)
 	if (close(open_file_to) == -1)
 	{
 		exit(100);
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", open_file_to);
+		dprintf(STDERR_FILENO, "Can't close fd %s\n", open_file_to);
 	}
 	if (close(open_file_from) == -1)
 	{
 		exit(100);
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", open_file_from);
+		dprintf(STDERR_FILENO, "Can't close fd %s\n", open_file_from);
 	}
 	return (0);
 }

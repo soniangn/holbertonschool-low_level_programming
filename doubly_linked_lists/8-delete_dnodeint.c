@@ -51,11 +51,10 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int idx)
 		return (1);
 	}
 
-	prev_node = *head;
+	current = *head;
 
 	for (; i < idx - 1; i++)
 	{
-		prev_node = current;
 		current = current->next;
 	}
 	current->next->prev = current->prev;

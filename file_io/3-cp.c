@@ -78,7 +78,7 @@ int copy_file(char *file_from, char *file_to)
 	if (open_file_from == -1 || read_file_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		free(buf);
+		/*free(buf);*/
 		exit(98);
 	}
 	/* Copy file1 to file2 */
@@ -87,11 +87,11 @@ int copy_file(char *file_from, char *file_to)
 		if (open_file_to == -1 || (write(open_file_to, buf, read_file_from) == -1))
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-			free(buf);
+			/*free(buf);*/
 			exit(99);
 		}
 	}
-	free(buf);
+	/*free(buf);*/
 	/* Close the opened files and handles their closing*/
 	closing(open_file_from);
 	closing(open_file_to);

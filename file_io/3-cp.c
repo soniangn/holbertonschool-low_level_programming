@@ -81,9 +81,8 @@ int copy_file(char *file_from, char *file_to)
 		exit(98);
 	}
 	/* Copy file1 to file2 */
-	while (read_file_from >= 1024)
+	while (read_file_from > 0)
 	{
-		copied_file = write(open_file_to, buf, read_file_from);
 		if (open_file_to == -1 || copied_file == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);

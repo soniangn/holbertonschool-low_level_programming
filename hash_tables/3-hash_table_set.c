@@ -12,14 +12,14 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *element = NULL;
+	hash_node_t *element = NULL, *temp = NULL;
 	unsigned long int index = 0, n = 0;
 	char *value_copy, *key_copy;
 
 	if (key == NULL || ht == NULL)
 		return (0);
 
-	/* Creation of a copy of the key/value pair */
+	/* Creation of copes of the key & value pair */
 	value_copy = strdup(value);
 	key_copy = strdup(key);
 
@@ -27,13 +27,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((unsigned char *)key, ht->size);
 
 	/* When positioned on the array[index] - handles cases */
-		/* Case 1 : If same key => collision -> Handles collision */
-	for (; ht->array[index]; n++)
+	/* Case 1 : If same key => collision -> Handles collision */
+	temp = ht->array[index];
+	for (; ht->array[n]; n++)
 	{
-		if (ht->array[index]->key == key)
+		if (temp->key == key)
 		{
-			free(ht->array[index]->value);
-			ht->array[index]->value = value_copy;
+			free(temp->value);
+			temp->value = value_copy;
+			free(temp);
 			return (1);
 		}
 	}

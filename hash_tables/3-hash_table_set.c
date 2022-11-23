@@ -34,6 +34,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free(temp->value);
 			temp->value = value_copy;
+			free(temp->value);
 			free(temp);
 			return (1);
 		}

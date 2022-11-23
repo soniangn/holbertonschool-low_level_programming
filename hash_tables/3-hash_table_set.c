@@ -16,7 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index = 0;
 	char *value_copy, *key_copy;
 
-	if (key == NULL)
+	if (key == NULL || ht == NULL)
 		return (0);
 
 	/* Creation of a copy of the key/value pair */
@@ -27,8 +27,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((unsigned char *)key, ht->size);
 
 	/* When positioned on the array[index] - handles cases */
-	while (ht->array[index])
-	{
 		/* Case 1 : If same key => collision -> Handles collision */
 		if (ht->array[index]->key == key)
 		{
@@ -36,7 +34,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			ht->array[index]->value = value_copy;
 			return (1);
 		}
-	}
 	/* Case 2: Free spot for the element to add */
 		/* Creation of the element */
 	element = malloc(sizeof(hash_node_t));

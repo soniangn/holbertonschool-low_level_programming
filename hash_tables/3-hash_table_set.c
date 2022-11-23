@@ -25,9 +25,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/* Application of the djb2 function to the element to get the index */
 	index = key_index((unsigned char *)key, ht->size);
-
 	/* When positioned on the array[index] - handles cases */
-	/* Case 1 : If same key => collision -> Handles collision */
+	/* Case 1 : If same key => updates value */
 	temp = ht->array[index];
 	for (; ht->array[n]; n++)
 	{
@@ -47,13 +46,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(element);
 		return (0);
 	}
-
 	element->key = key_copy;
 	element->value = value_copy;
 		/*Addition of the element */
 	element->next = ht->array[index];
 	ht->array[index] = element;
-
 	return (1);
 }
 

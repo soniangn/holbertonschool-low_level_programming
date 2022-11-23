@@ -13,7 +13,6 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *element = NULL;
-	hash_node_t *temp = NULL;
 	unsigned long int index = 0;
 
 	if (key == NULL)
@@ -36,17 +35,26 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/* When positioned on the array[index] - handles cases */
 	while (ht->array[index])
 	{
-		temp = ht->array[index];
 		/* Case 1 : If same key => collision -> Handles collision */
-		if (temp->key == element->key)
+		if (ht->array[index]->key == element->key)
 		{
-			free(temp->value);
-			temp->value = element->value;
+			free(ht->array[index]->value);
+			ht->array[index]->value = element->value;
 			free(element);
-			free(temp);
 			return (1);
 		}
 		/* Case 2: Free spot for the element to add */
+			/* Creation of the element */
+		element = malloc(sizeof(hash_node_t));
+		if (element == NULL)
+		{
+			free(element);
+			return (0);
+		}
+
+		element->key = strcpy(element->key, key);
+		element->value = strcpy(element->value, value);
+			/*Addition of the element */
 		element->next = ht->array[index];
 		ht->array[index] = element;
 	}

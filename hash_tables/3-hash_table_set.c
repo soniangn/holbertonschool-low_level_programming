@@ -40,20 +40,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	/* Case 2: Free spot for the element to add */
 		/* Creation of the element */
-	if (temp == NULL)
+	element = malloc(sizeof(hash_node_t));
+	if (element == NULL)
 	{
-		element = malloc(sizeof(hash_node_t));
-		if (element == NULL)
-		{
-			free(element);
-			return (0);
-		}
-		element->key = key_copy;
-		element->value = value_copy;
-		/*Addition of the element */
-		element->next = ht->array[index];
-		ht->array[index] = element;
+		free(element);
+		return (0);
 	}
+	element->key = key_copy;
+	element->value = value_copy;
+	/*Addition of the element */
+	element->next = ht->array[index];
+	ht->array[index] = element;
 	return (1);
 }
 

@@ -14,7 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *element = NULL, *temp = NULL;
 	unsigned long int index = 0, n = 0;
-	char *value_copy, *key_copy;
+	char *value_copy = 0, *key_copy = 0;
 
 	if (key == NULL || ht == NULL)
 		return (0);

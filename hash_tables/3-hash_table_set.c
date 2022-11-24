@@ -14,7 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *element = NULL, *temp = NULL;
 	unsigned long int index = 0, n = 0;
-	char *value_copy = 0, *key_copy = 0;
+	char *value_copy = NULL, *key_copy = NULL;
 
 	if (key == NULL || ht == NULL)
 		return (0);
@@ -28,16 +28,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/* When positioned on the array[index] - handles cases */
 	/* Case 1 : If same key => updates value */
 	temp = ht->array[index];
-	for (; ht->array[n]; n++)
+	while (temp)
 	{
 		if (temp->key == key)
 		{
 			free(temp->value);
 			temp->value = value_copy;
-			free(temp->value);
 			free(temp);
 			return (1);
 		}
+		temp = temp->next; 
 	}
 	/* Case 2: Free spot for the element to add */
 		/* Creation of the element */

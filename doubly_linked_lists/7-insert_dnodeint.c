@@ -60,7 +60,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	prev_node = *h;
 
-	for (; i < idx - 1; i++)
+	for (; i < idx && prev_node != NULL; i++)
 		prev_node = prev_node->next;
 
 	new_node->next = prev_node->next;

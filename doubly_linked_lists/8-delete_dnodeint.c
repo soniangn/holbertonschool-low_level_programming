@@ -53,7 +53,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int idx)
 
 	current = *head;
 
-	for (; i < idx - 1; i++)
+	for (; i < idx; i++)
 	{
 		current = current->next;
 	}

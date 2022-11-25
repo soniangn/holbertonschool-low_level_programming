@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	if (argv[2] == "")
+	if (argv[2] == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);

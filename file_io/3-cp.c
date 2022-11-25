@@ -91,7 +91,7 @@ void closing(int file)
 {
 	if (close(file) == -1)
 	{
-		exit(100);
 		dprintf(STDERR_FILENO, "Can't close fd %d\n", file);
+		exit(100);
 	}
 }

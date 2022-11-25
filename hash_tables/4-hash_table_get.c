@@ -21,7 +21,6 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	/* Application of the djb2 function to the element to get the index */
 	index = key_index((unsigned char *)key, ht->size);
 
-	/* Traversal of the array to find the index */
 	item = ht->array[index];
 	while (item)
 	{
@@ -29,7 +28,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 			value = item->value;
 		item = item->next;
 	}
-	free(item);
+
 	return (value);
 }
 

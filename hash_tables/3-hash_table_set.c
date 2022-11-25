@@ -22,22 +22,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/* Creation of copies of the key & value pair */
 	value_copy = strdup(value);
 	key_copy = strdup(key);
-
 	/* Application of the djb2 function to the element to get the index */
 	index = key_index((unsigned char *)key, ht->size);
-	/* When positioned on the array[index] - handles cases */
 	/* Case 1 : If same key => updates value */
 	temp = ht->array[index];
 	while (temp)
 	{
-		if (temp->key == key)
+		if (strcmp(temp->key, key) == 0)
 		{
 			free(temp->value);
 			temp->value = value_copy;
 			free(temp);
 			return (1);
 		}
-		temp = temp->next; 
+		temp = temp->next;
 	}
 	/* Case 2: Free spot for the element to add */
 		/* Creation of the element */

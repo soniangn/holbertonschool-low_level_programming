@@ -1,3 +1,4 @@
-# General Info
+# Holberton School Low-level Programming
 
-This is the repository for Holberton School projects on low level programming
+## Description
+This is the repository of the projects realized for Holberton School curriculum on low-level programming.
